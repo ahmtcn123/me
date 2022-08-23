@@ -1,0 +1,46 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  -webkit-user-select: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.dock {
+  border: 1px solid black;
+}
+
+.logo {
+  width: 12px;
+  margin-top: -2px;
+}
+
+ul[role="menu-bar"] {
+  height: 30px;
+}
+
+li[role="menu-item"]:hover svg {
+  fill: #fff;
+}
+
+li[role="menu-item"]:focus-within svg {
+  fill: #fff;
+}
+
+.window-holder {
+  display: none;
+  position: absolute;
+  z-index: -2;
+}
+
+.shadowFight {
+  position: absolute;
+  display: none;
+  width: 500px;
+  height: 500px;
+  border: 2px dotted black;
+}
+
+.speciala {
+  text-decoration: none;
+}
