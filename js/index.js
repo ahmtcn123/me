@@ -6,8 +6,8 @@ function focusOnElement(id) {
 }
 
 function dragElement(elmnt) {
-  var shadowFight = document.querySelector(".shadowFight");
-  var pos1 = 0,
+  const shadowFight = document.querySelector(".shadowFight");
+  let pos1 = 0,
     pos2 = 0,
     pos3 = 0,
     pos4 = 0;
@@ -29,10 +29,10 @@ function dragElement(elmnt) {
       return;
     }
 
-    let is_title = e.path.find((el) => {
-      return el?.className == "title-bar";
-    });
     e = e || window.event;
+    console.log(e);
+    const is_title = e.className == "title-bar" || e.className == "title";
+
 
     focusOnElement(elmnt.id);
 
@@ -91,7 +91,7 @@ function dragElement(elmnt) {
   }
 }
 
-var apps = [
+const apps = [
   {
     id: 1,
     closed: false,
@@ -113,8 +113,8 @@ var apps = [
 
 window.onload = () => {
   //55% percent of window height
-  let height = Math.floor(window.innerHeight * 0.75);
-  let width = Math.floor(window.innerWidth * 0.35);
+  const height = Math.floor(window.innerHeight * 0.75);
+  const width = Math.floor(window.innerWidth * 0.35);
 
   document.querySelectorAll(".window-pane").forEach((el) => {
     el.style["max-height"] = height + "px";
@@ -134,7 +134,7 @@ window.onload = () => {
   });
 
   document.getElementById("about-dev").onclick = () => {
-    let el = document.getElementById("1");
+    const el = document.getElementById("1");
     focusOnElement("1")
     apps.find((app) => app.id == 1).closed = false;
     el.style.display = "block";
@@ -144,7 +144,7 @@ window.onload = () => {
   };
 
   document.getElementById("alarm-clock").onclick = () => {
-    let el = document.getElementById("2");
+    const el = document.getElementById("2");
     focusOnElement("2")
     apps.find((app) => app.id == 2).closed = false;
     el.style.display = "block";
@@ -153,7 +153,7 @@ window.onload = () => {
     el.style.opacity = 1;
   };
   document.getElementById("social-media").onclick = () => {
-    let el = document.getElementById("3");
+    const el = document.getElementById("3");
     focusOnElement("3")
     apps.find((app) => app.id == 3).closed = false;
     el.style.display = "block";
@@ -162,7 +162,7 @@ window.onload = () => {
     el.style.opacity = 1;
   };
   document.getElementById("projects").onclick = () => {
-    let el = document.getElementById("4");
+    const el = document.getElementById("4");
     focusOnElement("4")
     apps.find((app) => app.id == 4).closed = false;
     el.style.display = "block";
